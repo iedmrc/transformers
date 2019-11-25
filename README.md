@@ -86,6 +86,17 @@ When TensorFlow 2.0 and/or PyTorch has been installed, you can install from sour
 pip install [--editable] .
 ```
 
+### Run the examples
+
+Examples are included in the repository but are not shipped with the library.
+Therefore, in order to run the latest versions of the examples you also need to install from source. To do so, create a new virtual environment and follow these steps:
+
+```bash
+git clone git@github.com:huggingface/transformers
+cd transformers
+pip install [--editable] .
+```
+
 ### Tests
 
 A series of tests are included for the library and the example scripts. Library tests can be found in the [tests folder](https://github.com/huggingface/transformers/tree/master/transformers/tests) and examples tests in the [examples folder](https://github.com/huggingface/transformers/tree/master/examples).
@@ -122,7 +133,8 @@ At some point in the future, you'll be able to seamlessly move from pre-training
 7. **[RoBERTa](https://github.com/pytorch/fairseq/tree/master/examples/roberta)** (from Facebook), released together with the paper a [Robustly Optimized BERT Pretraining Approach](https://arxiv.org/abs/1907.11692) by Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov.
 8. **[DistilBERT](https://github.com/huggingface/transformers/tree/master/examples/distillation)** (from HuggingFace), released together with the paper [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](https://arxiv.org/abs/1910.01108) by Victor Sanh, Lysandre Debut and Thomas Wolf. The same method has been applied to compress GPT2 into [DistilGPT2](https://github.com/huggingface/transformers/tree/master/examples/distillation).
 9. **[CTRL](https://github.com/salesforce/ctrl/)** (from Salesforce) released with the paper [CTRL: A Conditional Transformer Language Model for Controllable Generation](https://arxiv.org/abs/1909.05858) by Nitish Shirish Keskar*, Bryan McCann*, Lav R. Varshney, Caiming Xiong and Richard Socher.
-10. Want to contribute a new model? We have added a **detailed guide and templates** to guide you in the process of adding a new model. You can find them in the [`templates`](./templates) folder of the repository. Be sure to check the [contributing guidelines](./CONTRIBUTING.md) and contact the maintainers or open an issue to collect feedbacks before starting your PR.
+10. **[CamemBERT](https://camembert-model.fr)** (from Inria/Facebook/Sorbonne) released with the paper [CamemBERT: a Tasty French Language Model](https://arxiv.org/abs/1911.03894) by Louis Martin*, Benjamin Muller*, Pedro Javier Ortiz Suárez*, Yoann Dupont, Laurent Romary, Éric Villemonte de la Clergerie, Djamé Seddah and Benoît Sagot.
+11. Want to contribute a new model? We have added a **detailed guide and templates** to guide you in the process of adding a new model. You can find them in the [`templates`](./templates) folder of the repository. Be sure to check the [contributing guidelines](./CONTRIBUTING.md) and contact the maintainers or open an issue to collect feedbacks before starting your PR.
 
 These implementations have been tested on several datasets (see the example scripts) and should match the performances of the original implementations (e.g. ~93 F1 on SQuAD for BERT Whole-Word-Masking, ~88 F1 on RocStories for OpenAI GPT, ~18.3 perplexity on WikiText 103 for Transformer-XL, ~0.916 Peason R coefficient on STS-B for XLNet). You can find more details on the performances in the Examples section of the [documentation](https://huggingface.co/transformers/examples.html).
 
@@ -251,6 +263,11 @@ print("sentence_2 is", "a paraphrase" if pred_2 else "not a paraphrase", "of sen
 ```
 
 ## Quick tour of the fine-tuning/usage scripts
+
+**Important**  
+Before running the fine-tuning scripts, please read the
+[instructions](#run-the-examples) on how to
+setup your environment to run the examples.
 
 The library comprises several example scripts with SOTA performances for NLU and NLG tasks:
 
